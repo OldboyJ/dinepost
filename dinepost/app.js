@@ -1,8 +1,7 @@
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
-var bodyParser = require('body-parser');
-var knex = require('./db/knex');
+var bodyParser = require('body-parser')
 
 var index = require('./routes/posts');
 var users = require('./routes/reviews');
@@ -20,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

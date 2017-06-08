@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('dinePostApp')
-    .component('detailedReviewComponent', {
+    .component('formComponent', {
 
       controller: function (postService) {
         const vm = this
@@ -16,7 +16,7 @@
 
 
       },
-      templateUrl: 'reviews/reviews-template.html'
+      templateUrl: 'forms/form-template.html'
 
     })
 

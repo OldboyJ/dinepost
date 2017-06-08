@@ -16,11 +16,11 @@
         url: '/',
         component: 'mainComponent',
       })
-      .state({
-        name: 'edit',
-        url: '/posts/:id/edit',
-        component: 'editComponent'
-      })
+      // .state({
+      //   name: 'edit',
+      //   url: '/posts/:id/edit',
+      //   component: 'formComponent'
+      // })
   }
 
 }());

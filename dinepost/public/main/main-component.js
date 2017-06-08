@@ -10,7 +10,7 @@
 
         vm.$onInit = function () {
           postService.getPosts().then(function(response){
-            console.log(response.data);
+            console.log(response);
             vm.posts = response.data;
           });
         }
@@ -26,7 +26,7 @@
 
 
       },
-      templateUrl: 'main/app.template.html'
+      templateUrl: 'main/main-template.html'
 
     })
 
