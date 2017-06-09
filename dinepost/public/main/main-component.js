@@ -4,20 +4,24 @@
   angular.module('dinePostApp')
     .component('mainComponent', {
 
-      controller: function (postService) {
+      controller: function (reviewService) {
         const vm = this
+        vm.showform = false;
 
 
         vm.$onInit = function () {
-          postService.getPosts().then(function(response){
-            console.log(response);
-            vm.posts = response.data;
-          });
+          vm.reviews = reviewService.getReviews()
         }
 
-        vm.updateData = function (newpost) {
-          vm.posts.push(newpost);
+        vm.updateData = function (newReview) {
+          vm.reviews.push(newReview);
           vm.showform = false;
+        }
+
+        vm.addReview = function (review) {
+          // console.log(review);
+          reviewService.addReview(review);
+          vm.reviews = reviewService.getReviews();
         }
 
 
@@ -27,6 +31,8 @@
 
       },
       templateUrl: 'main/main-template.html'
+
+
 
     })
 

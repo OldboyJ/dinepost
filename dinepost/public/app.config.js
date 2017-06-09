@@ -6,7 +6,7 @@
   config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider']
 
   function config($stateProvider, $urlRouterProvider, $locationProvider){
-
+    $urlRouterProvider.otherwise('/');
     // this line is optional
     $locationProvider.html5Mode(true)
 
@@ -16,11 +16,11 @@
         url: '/',
         component: 'mainComponent',
       })
-      // .state({
-      //   name: 'edit',
-      //   url: '/posts/:id/edit',
-      //   component: 'formComponent'
-      // })
+      .state({
+        name: 'details',
+        url: '/reviews/:id/detail',
+        component: 'detailedReviewComponent'
+      })
   }
 
 }());
