@@ -14,7 +14,8 @@
         <small>Your Grade: <cite title="Source Title">{{$ctrl.review.grade}}</cite></small>
       </blockquote>
     </div>
-    <button ng-click="$ctrl.deleteReview($index)" name="button">Delete</button>
+    <button ng-click="$ctrl.deleteReview()" ui-sref="home"name="button">Delete</button>
+    <button ng-click="$ctrl.showEditForm = !$ctrl.showEditForm" name="button">Edit</button>
   </div>
-
+  <edit-review-component review="$ctrl.passedDownReview" changereview="$ctrl.editReview(review)" ng-if="$ctrl.showEditForm"></edit-review-component>
 </div>

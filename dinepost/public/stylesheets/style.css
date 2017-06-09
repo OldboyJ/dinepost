@@ -1,12 +1,28 @@
 /* Space out content a bit */
-body {
+body::after {
   padding-top: 20px;
   padding-bottom: 20px;
-  background: #333333;
+  background-image: url("../images/restaurant-1530014_1920.jpg");
+  content: "";
+  opacity: 0.75;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+}
+
+.breadcrumb {
+  background: #ffffff;
 }
 
 legend, label {
   color: #ffffff;
+}
+
+.list-group-item {
+  border: 2px solid #d32323;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

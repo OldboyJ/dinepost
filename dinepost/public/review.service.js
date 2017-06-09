@@ -9,7 +9,7 @@
         id: 1,
         name: 'wendys',
         category: 'lunch',
-        review: 'too many choices to chose from',
+        review: 'too many choices to choose from',
         grade: 'C'
       },
       {
@@ -26,9 +26,7 @@
       }
 
       this.getReviewById = function(id){
-
         var arr = this.reviews.filter(function(item){
-
           if(item.id == id){
             console.log(item.id);
             return item;
@@ -45,21 +43,24 @@
 
         // return $http.post('/api/reviews', post)
       }
-
+      // Delete a review
       this.deleteReview = function (review) {
         console.log('im in service');
-        this.reviews.splice(review,1);
-
+        this.reviews.splice(review.id,1);
       }
 
-      // this.getOneReview = function (reviewId) {
-      //   console.log(postId);
-      //   return $http.get('/api/reviews/'+ reviewId)
-      // }
 
-      // this.updateReview = function (postId, edits) {
-      //   return $http.patch('/api/reviews/'+ postId, edits)
-      // }
+      this.updateReview = function (review) {
+         // find the index of the review that we need to change.
+         var reviewIndex = 0;
+         this.reviews.map(function(item,index){
+           if(item.id == review.id){
+             reviewIndex = index;
+           }
+         })
+          this.reviews[reviewIndex] = review
+         // update the review.
+      }
 
   })
 

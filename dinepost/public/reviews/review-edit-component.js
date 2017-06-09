@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('dinePostApp')
-    .component('formComponent', {
+    .component('editReviewComponent', {
 
 
       controller: function (reviewService) {
@@ -21,11 +21,10 @@
         }
 
       },
-      templateUrl: 'forms/form-template.html',
-
+      templateUrl: 'reviews/review-edit-template.html',
       bindings: {
-        addreview: '&',
-        hide: '@'
+        review: '<',
+        changereview: '&'
       }
 
     })

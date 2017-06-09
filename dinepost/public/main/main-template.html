@@ -10,10 +10,13 @@
      </div>
      <form-component ng-if="$ctrl.showform"  addreview="$ctrl.addReview(review)" hide="$ctrl.showform"></form-component>
 
-     <div ng-repeat="review in $ctrl.reviews track by $index" class="list-group">
+     <div ng-repeat="review in $ctrl.reviews" class="list-group">
       <a href="#" class="list-group-item" ui-sref="details({id: review.id})">
-        {{review.name}} |
-        {{review.category}}
+        {{review.name}}
+        <blockquote>
+          <p>{{review.review}}</p>
+          <small>Your Grade: <cite title="Source Title">{{review.grade}}</cite></small>
+        </blockquote>
       </a>
     </div>
 
